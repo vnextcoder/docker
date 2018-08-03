@@ -1,0 +1,433 @@
+
+C:\Users\avin_>mkdir flapp
+
+C:\Users\avin_>cd flapp
+
+C:\Users\avin_\flapp>dir
+ Volume in drive C is Windowsr
+ Volume Serial Number is 3C74-92F0
+
+ Directory of C:\Users\avin_\flapp
+
+25/05/2018  20:36    <DIR>          .
+25/05/2018  20:36    <DIR>          ..
+               0 File(s)              0 bytes
+               2 Dir(s)  27,455,528,960 bytes free
+
+C:\Users\avin_\flapp>notepad requirements.txt
+
+C:\Users\avin_\flapp>notepad Dockerfile
+
+C:\Users\avin_\flapp>dir
+ Volume in drive C is Windowsr
+ Volume Serial Number is 3C74-92F0
+
+ Directory of C:\Users\avin_\flapp
+
+25/05/2018  20:37    <DIR>          .
+25/05/2018  20:37    <DIR>          ..
+25/05/2018  20:37               510 Dockerfile.txt
+25/05/2018  20:36                 5 requirements.txt
+               2 File(s)            515 bytes
+               2 Dir(s)  27,455,528,960 bytes free
+
+C:\Users\avin_\flapp>ren Dockerfile.txt Dockerfile
+
+C:\Users\avin_\flapp>dir
+ Volume in drive C is Windowsr
+ Volume Serial Number is 3C74-92F0
+
+ Directory of C:\Users\avin_\flapp
+
+25/05/2018  20:37    <DIR>          .
+25/05/2018  20:37    <DIR>          ..
+25/05/2018  20:37               510 Dockerfile
+25/05/2018  20:36                 5 requirements.txt
+               2 File(s)            515 bytes
+               2 Dir(s)  27,455,528,960 bytes free
+
+C:\Users\avin_\flapp>notepad app.py
+
+C:\Users\avin_\flapp>dir
+ Volume in drive C is Windowsr
+ Volume Serial Number is 3C74-92F0
+
+ Directory of C:\Users\avin_\flapp
+
+25/05/2018  20:37    <DIR>          .
+25/05/2018  20:37    <DIR>          ..
+25/05/2018  20:37               178 app.py
+25/05/2018  20:37               510 Dockerfile
+25/05/2018  20:36                 5 requirements.txt
+               3 File(s)            693 bytes
+               2 Dir(s)  27,455,528,960 bytes free
+
+C:\Users\avin_\flapp>docker build -t helloworldapp .
+Sending build context to Docker daemon  4.096kB
+Step 1/7 : FROM python:2.7-windowsservercore
+2.7-windowsservercore: Pulling from library/python
+5847a47b8593: Retrying in 17 seconds
+af675e5054a0: Retrying in 17 seconds
+b0d3f2c48ca5: Download complete
+e97802b47cdb: Download complete
+a11d607860a5: Download complete
+d09942d7565c: Downloading [>                                                  ]  392.3kB/38.67MB
+2fdcef415697: Waiting
+d5a9d3c561ab: Waiting
+5d2ae2c8c31c: Waiting
+206329f5a617: Waiting
+
+C:\Users\avin_\flapp>docker build -t helloworldapp .
+Sending build context to Docker daemon  4.096kB
+Step 1/7 : FROM python:2.7-windowsservercore
+2.7-windowsservercore: Pulling from library/python
+5847a47b8593: Downloading [>                                                  ]  2.163MB/2.274GB
+af675e5054a0: Downloading [>                                                  ]   2.72MB/805.9MB
+b0d3f2c48ca5: Download complete
+e97802b47cdb: Download complete
+a11d607860a5: Download complete
+d09942d7565c: Download complete
+2fdcef415697: Download complete
+d5a9d3c561ab: Download complete
+5d2ae2c8c31c: Download complete
+206329f5a617: Download complete
+
+C:\Users\avin_\flapp>docker images
+REPOSITORY                                    TAG                           IMAGE ID            CREATED             SIZE
+microsoft/dotnet                              2.1-sdk                       4b8e39e1406e        2 weeks ago         1.72GB
+mycontainerregistry08052018.azurecr.io/anet   v1                            4c50cc3ea5bf        2 weeks ago         384MB
+helloworld/anet                               latest                        4c50cc3ea5bf        2 weeks ago         384MB
+<none>                                        <none>                        eeb8aa270c94        2 weeks ago         1.74GB
+microsoft/dotnet                              2.0-sdk-nanoserver-1709       53c8b7bdb9c4        2 weeks ago         1.73GB
+microsoft/dotnet                              2.0-runtime-nanoserver-1709   69a86397e7dc        2 weeks ago         384MB
+docker4w/nsenter-dockerd                      latest                        cae870735e91        7 months ago        263kB
+
+C:\Users\avin_\flapp>docker images
+REPOSITORY                                    TAG                           IMAGE ID            CREATED             SIZE
+microsoft/dotnet                              2.1-sdk                       4b8e39e1406e        2 weeks ago         1.72GB
+helloworld/anet                               latest                        4c50cc3ea5bf        2 weeks ago         384MB
+mycontainerregistry08052018.azurecr.io/anet   v1                            4c50cc3ea5bf        2 weeks ago         384MB
+<none>                                        <none>                        eeb8aa270c94        2 weeks ago         1.74GB
+microsoft/dotnet                              2.0-sdk-nanoserver-1709       53c8b7bdb9c4        2 weeks ago         1.73GB
+microsoft/dotnet                              2.0-runtime-nanoserver-1709   69a86397e7dc        2 weeks ago         384MB
+docker4w/nsenter-dockerd                      latest                        cae870735e91        7 months ago        263kB
+
+C:\Users\avin_\flapp>docker build -t helloworldapp .
+Sending build context to Docker daemon  4.096kB
+Step 1/7 : FROM python:2.7-windowsservercore
+2.7-windowsservercore: Pulling from library/python
+5847a47b8593: Retrying in 1 second
+af675e5054a0: Retrying in 1 second
+b0d3f2c48ca5: Download complete
+e97802b47cdb: Download complete
+a11d607860a5: Download complete
+d09942d7565c: Download complete
+2fdcef415697: Download complete
+d5a9d3c561ab: Download complete
+5d2ae2c8c31c: Download complete
+206329f5a617: Download complete
+dial tcp: lookup go.microsoft.com: no such host
+
+C:\Users\avin_\flapp>dotnet new -i NUnit3.DotNetNew.Template
+^C
+C:\Users\avin_\flapp>docker build -t helloworldapp .
+Sending build context to Docker daemon  4.096kB
+Step 1/7 : FROM python:2.7-windowsservercore
+2.7-windowsservercore: Pulling from library/python
+5847a47b8593: Pull complete
+af675e5054a0: Pull complete
+b0d3f2c48ca5: Pull complete
+e97802b47cdb: Pull complete
+a11d607860a5: Pull complete
+d09942d7565c: Pull complete
+2fdcef415697: Pull complete
+d5a9d3c561ab: Pull complete
+5d2ae2c8c31c: Pull complete
+206329f5a617: Pull complete
+Digest: sha256:0a8c46b161a9ef8f4d1fa708701543901fc93ec8d4645571ce6a0cadc289ebd9
+Status: Downloaded newer image for python:2.7-windowsservercore
+ ---> 32a18decfb90
+Step 2/7 : WORKDIR /app
+Removing intermediate container 9506469d0b0b
+ ---> af683eaf4f4e
+Step 3/7 : ADD . /app
+ ---> 8d89ecb78845
+Step 4/7 : RUN pip install -r requirements.txt
+ ---> Running in 731c84d30d98
+Collecting flask (from -r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/7f/e7/08578774ed4536d3242b14dacb4696386634607af824ea997202cd0edb4b/Flask-1.0.2-py2.py3-none-any.whl (91kB)
+Collecting click>=5.1 (from flask->-r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/34/c1/8806f99713ddb993c5366c362b2f908f18269f8d792aff1abfd700775a77/click-6.7-py2.py3-none-any.whl (71kB)
+Collecting Werkzeug>=0.14 (from flask->-r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/20/c4/12e3e56473e52375aa29c4764e70d1b8f3efa6682bef8d0aae04fe335243/Werkzeug-0.14.1-py2.py3-none-any.whl (322kB)
+Collecting Jinja2>=2.10 (from flask->-r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/7f/ff/ae64bacdfc95f27a016a7bed8e8686763ba4d277a78ca76f32659220a731/Jinja2-2.10-py2.py3-none-any.whl (126kB)
+Collecting itsdangerous>=0.24 (from flask->-r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/dc/b4/a60bcdba945c00f6d608d8975131ab3f25b22f2bcfe1dab221165194b2d4/itsdangerous-0.24.tar.gz (46kB)
+Collecting MarkupSafe>=0.23 (from Jinja2>=2.10->flask->-r requirements.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/4d/de/32d741db316d8fdb7680822dd37001ef7a448255de9699ab4bfcbdf4172b/MarkupSafe-1.0.tar.gz
+Building wheels for collected packages: itsdangerous, MarkupSafe
+  Running setup.py bdist_wheel for itsdangerous: started
+  Running setup.py bdist_wheel for itsdangerous: finished with status 'done'
+  Stored in directory: C:\Users\ContainerAdministrator\AppData\Local\pip\Cache\wheels\2c\4a\61\5599631c1554768c6290b08c02c72d7317910374ca602ff1e5
+  Running setup.py bdist_wheel for MarkupSafe: started
+  Running setup.py bdist_wheel for MarkupSafe: finished with status 'done'
+  Stored in directory: C:\Users\ContainerAdministrator\AppData\Local\pip\Cache\wheels\33\56\20\ebe49a5c612fffe1c5a632146b16596f9e64676768661e4e46
+Successfully built itsdangerous MarkupSafe
+Installing collected packages: click, Werkzeug, MarkupSafe, Jinja2, itsdangerous, flask
+Successfully installed Jinja2-2.10 MarkupSafe-1.0 Werkzeug-0.14.1 click-6.7 flask-1.0.2 itsdangerous-0.24
+Removing intermediate container 731c84d30d98
+ ---> 3746d815219f
+Step 5/7 : EXPOSE 80
+ ---> Running in abad0f1a4382
+Removing intermediate container abad0f1a4382
+ ---> ba23dc522e48
+Step 6/7 : ENV NAME World
+ ---> Running in 78550aaa41b1
+Removing intermediate container 78550aaa41b1
+ ---> e9989a074fef
+Step 7/7 : CMD ["python", "app.py"]
+ ---> Running in aacd134ff663
+Removing intermediate container aacd134ff663
+ ---> fa7906d87197
+Successfully built fa7906d87197
+Successfully tagged helloworldapp:latest
+
+C:\Users\avin_\flapp>docker images
+REPOSITORY                                    TAG                           IMAGE ID            CREATED             SIZE
+helloworldapp                                 latest                        fa7906d87197        41 minutes ago      6.55GB
+python                                        2.7-windowsservercore         32a18decfb90        5 days ago          6.51GB
+microsoft/dotnet                              2.1-sdk                       4b8e39e1406e        2 weeks ago         1.72GB
+mycontainerregistry08052018.azurecr.io/anet   v1                            4c50cc3ea5bf        3 weeks ago         384MB
+helloworld/anet                               latest                        4c50cc3ea5bf        3 weeks ago         384MB
+<none>                                        <none>                        eeb8aa270c94        3 weeks ago         1.74GB
+microsoft/dotnet                              2.0-sdk-nanoserver-1709       53c8b7bdb9c4        3 weeks ago         1.73GB
+microsoft/dotnet                              2.0-runtime-nanoserver-1709   69a86397e7dc        3 weeks ago         384MB
+docker4w/nsenter-dockerd                      latest                        cae870735e91        7 months ago        263kB
+
+C:\Users\avin_\flapp>docker run -d --name my-web-site helloworldapp
+c4d1bd24669aa22fce82b19dd0a4b9895076b8d82b72169a6ea34eb5def72c74
+
+C:\Users\avin_\flapp>docker inspect -f "{{ .NetworkSettings.Networks.nat.IPAddress }}" my-web-site
+172.29.149.245
+
+C:\Users\avin_\flapp>
+C:\Users\avin_\flapp>docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED              STATUS              PORTS               NAMES
+c4d1bd24669a        helloworldapp       "python app.py"     About a minute ago   Up 41 seconds       80/tcp              my-web-site
+
+C:\Users\avin_\flapp>dir
+ Volume in drive C is Windowsr
+ Volume Serial Number is 3C74-92F0
+
+ Directory of C:\Users\avin_\flapp
+
+25/05/2018  20:37    <DIR>          .
+25/05/2018  20:37    <DIR>          ..
+25/05/2018  20:37               178 app.py
+25/05/2018  20:37               510 Dockerfile
+25/05/2018  20:36                 5 requirements.txt
+               3 File(s)            693 bytes
+               2 Dir(s)  14,557,057,024 bytes free
+
+C:\Users\avin_\flapp>pip install virtualenv
+Collecting virtualenv
+  Downloading https://files.pythonhosted.org/packages/b6/30/96a02b2287098b23b875bc8c2f58071c35d2efe84f747b64d523721dc2b5/virtualenv-16.0.0-py2.py3-none-any.whl (1.9MB)
+    100% |################################| 1.9MB 1.1MB/s
+Installing collected packages: virtualenv
+Successfully installed virtualenv-16.0.0
+
+C:\Users\avin_\flapp>pip uninstall virtualev
+Skipping virtualev as it is not installed.
+
+C:\Users\avin_\flapp>pip uninstall virtualenv
+Uninstalling virtualenv-16.0.0:
+  Would remove:
+    c:\python27\lib\site-packages\virtualenv-16.0.0.dist-info\*
+    c:\python27\lib\site-packages\virtualenv.py
+    c:\python27\lib\site-packages\virtualenv_support\*
+    c:\python27\scripts\virtualenv.exe
+Proceed (y/n)? y
+  Successfully uninstalled virtualenv-16.0.0
+
+C:\Users\avin_\flapp>pip
+
+Usage:
+  pip <command> [options]
+
+Commands:
+  install                     Install packages.
+  download                    Download packages.
+  uninstall                   Uninstall packages.
+  freeze                      Output installed packages in requirements format.
+  list                        List installed packages.
+  show                        Show information about installed packages.
+  check                       Verify installed packages have compatible dependencies.
+  config                      Manage local and global configuration.
+  search                      Search PyPI for packages.
+  wheel                       Build wheels from your requirements.
+  hash                        Compute hashes of package archives.
+  completion                  A helper command used for command completion.
+  help                        Show help for commands.
+
+General Options:
+  -h, --help                  Show help.
+  --isolated                  Run pip in an isolated mode, ignoring
+                              environment variables and user configuration.
+  -v, --verbose               Give more output. Option is additive, and can be
+                              used up to 3 times.
+  -V, --version               Show version and exit.
+  -q, --quiet                 Give less output. Option is additive, and can be
+                              used up to 3 times (corresponding to WARNING,
+                              ERROR, and CRITICAL logging levels).
+  --log <path>                Path to a verbose appending log.
+  --proxy <proxy>             Specify a proxy in the form
+                              [user:passwd@]proxy.server:port.
+  --retries <retries>         Maximum number of retries each connection should
+                              attempt (default 5 times).
+  --timeout <sec>             Set the socket timeout (default 15 seconds).
+  --exists-action <action>    Default action when a path already exists:
+                              (s)witch, (i)gnore, (w)ipe, (b)ackup, (a)bort).
+  --trusted-host <hostname>   Mark this host as trusted, even though it does
+                              not have valid or any HTTPS.
+  --cert <path>               Path to alternate CA bundle.
+  --client-cert <path>        Path to SSL client certificate, a single file
+                              containing the private key and the certificate
+                              in PEM format.
+  --cache-dir <dir>           Store the cache data in <dir>.
+  --no-cache-dir              Disable the cache.
+  --disable-pip-version-check
+                              Don't periodically check PyPI to determine
+                              whether a new version of pip is available for
+                              download. Implied with --no-index.
+  --no-color                  Suppress colored output
+
+C:\Users\avin_\flapp>pip list
+Package             Version
+------------------- ---------
+adal                0.6.0
+argcomplete         1.9.4
+asn1crypto          0.24.0
+azure-common        1.1.11
+azure-nspkg         2.0.0
+azure-servicefabric 6.2.0.0
+certifi             2018.4.16
+cffi                1.11.5
+chardet             3.0.4
+colorama            0.3.9
+configparser        3.5.0
+cryptography        2.2.2
+entrypoints         0.2.3
+enum34              1.1.6
+future              0.16.0
+idna                2.6
+ipaddress           1.0.22
+isodate             0.6.0
+jmespath            0.9.3
+jsonpickle          0.9.6
+keyring             12.2.1
+knack               0.1.1
+msrest              0.4.29
+msrestazure         0.4.31
+oauthlib            2.1.0
+pip                 10.0.1
+pycparser           2.18
+Pygments            2.2.0
+PyJWT               1.6.4
+python-dateutil     2.7.3
+pywin32-ctypes      0.1.2
+PyYAML              3.12
+requests            2.18.4
+requests-oauthlib   0.8.0
+setuptools          39.0.1
+sfctl               5.0.0
+six                 1.11.0
+tabulate            0.8.2
+urllib3             1.22
+
+C:\Users\avin_\flapp>az
+
+     /\
+    /  \    _____   _ _  ___ _
+   / /\ \  |_  / | | | \'__/ _\
+  / ____ \  / /| |_| | | |  __/
+ /_/    \_\/___|\__,_|_|  \___|
+
+
+Welcome to the cool new Azure CLI!
+
+Here are the base commands:
+
+    account          : Manage Azure subscription information.
+    acr              : Manage Azure Container Registries.
+    acs              : Manage Azure Container Services.
+    ad               : Manage Azure Active Directory Graph entities needed for Role Based Access
+                       Control.
+    advisor          : Manage Azure Advisor.
+    aks              : Manage Azure Kubernetes Services.
+    appservice       : Manage App Service plans.
+    backup           : Commands to manage Azure Backups.
+    batch            : Manage Azure Batch.
+    batchai          : Batch AI.
+    billing          : Manage Azure Billing.
+    cdn              : Manage Azure Content Delivery Networks (CDNs).
+    cloud            : Manage registered Azure clouds.
+    cognitiveservices: Manage Azure Cognitive Services accounts.
+    configure        : Display and manage the Azure CLI 2.0 configuration. This command is
+                       interactive.
+    consumption      : Manage consumption of Azure resources.
+    container        : Manage Azure Container Instances.
+    cosmosdb         : Manage Azure Cosmos DB database accounts.
+    disk             : Manage Azure Managed Disks.
+    dla              : (PREVIEW) Manage Data Lake Analytics accounts, jobs, and catalogs.
+    dls              : (PREVIEW) Manage Data Lake Store accounts and filesystems.
+    eventgrid        : Manage Azure Event Grid topics and subscriptions.
+    eventhubs        : Manage Azure Event Hubs namespaces, eventhubs, consumergroups and geo
+                       recovery configurations - Alias.
+    extension        : Manage and update CLI extensions.
+    feature          : Manage resource provider features.
+    feedback         : Loving or hating the CLI?  Let us know!
+    find             : Find Azure CLI commands.
+    functionapp      : Manage function apps.
+    group            : Manage resource groups and template deployments.
+    identity         : Managed Service Identities.
+    image            : Manage custom virtual machine images.
+    interactive      : Start interactive mode.
+    iot              : (PREVIEW) Manage Internet of Things (IoT) assets.
+    keyvault         : Safeguard and maintain control of keys, secrets, and certificates.
+    lab              : Manage Azure DevTest Labs.
+    lock             : Manage Azure locks.
+    login            : Log in to Azure.
+    logout           : Log out to remove access to Azure subscriptions.
+    managedapp       : Manage template solutions provided and maintained by Independent Software
+                       Vendors (ISVs).
+    monitor          : Manage the Azure Monitor Service.
+    mysql            : Manage Azure Database for MySQL servers.
+    network          : Manage Azure Network resources.
+    policy           : Manage resource policies.
+    postgres         : Manage Azure Database for PostgreSQL servers.
+    provider         : Manage resource providers.
+    redis            : Access to a secure, dedicated Redis cache for your Azure applications.
+    reservations     : Manage Azure Reservations.
+    resource         : Manage Azure resources.
+    role             : Manage user roles for access control with Azure Active Directory and service
+                       principals.
+    servicebus       : Manage Azure Service Bus namespaces, queues, topics, subscriptions, rules and
+                       geo-disaster recovery configuration alias.
+    sf               : Manage and administer Azure Service Fabric clusters.
+    snapshot         : Manage point-in-time copies of managed disks, native blobs, or other
+                       snapshots.
+    sql              : Manage Azure SQL Databases and Data Warehouses.
+    storage          : Manage Azure Cloud Storage resources.
+    tag              : Manage resource tags.
+    vm               : Provision Linux or Windows virtual machines.
+    vmss             : Manage groupings of virtual machines in an Azure Virtual Machine Scale Set
+                       (VMSS).
+    webapp           : Manage web apps.
+
+C:\Users\avin_\flapp>where az
+C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\wbin\az.cmd
+
+C:\Users\avin_\flapp>notepad C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\wbin\az.cmd
+
+C:\Users\avin_\flapp>
