@@ -1,5 +1,5 @@
 FROM avinb/jre8-32:latest
-MAINTAINER Avinash Barnwal <avin.barnwal@gmail.com> 
+MAINTAINER Avinash Barnwal <vnextcoder@gmail.com> 
 RUN echo 'we are running some # of cool things'
 ENV TEAMCITY_DATA_PATH=/var/lib/teamcity \
     TEAMCITY_HOME=/opt/lib/teamcity \
